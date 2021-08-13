@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-
 //import React from 'react';
 import './App.css';
 const api = {
   key: "9f4f24f9c84a420d24184975419ca2bd",
-  base: "http://api.openweathermap.org/data/2.5/"
-
+  base: "https://api.openweathermap.org/data/2.5/"
 }
 
 function App() {
@@ -43,7 +41,7 @@ function App() {
           <input 
             type="text"
             className="search-bar"
-            placeholder="Ej: Avellaneda, AR"
+            placeholder="Search..."
             onChange={e => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
@@ -71,3 +69,7 @@ function App() {
 }
 
 export default App;
+
+            //<div className="weather">{weather.weather[0].main}</div>errores
+            //<div className="weather">Min: {weather.main.temp_min}</div>
+            //<div className="weather">Max: {weather.main.temp_max}</div>
