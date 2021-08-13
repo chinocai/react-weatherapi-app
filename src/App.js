@@ -5,7 +5,6 @@ const api = {
   key: "9f4f24f9c84a420d24184975419ca2bd",
   base: "https://api.openweathermap.org/data/2.5/"
 }
-
 function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
@@ -23,8 +22,8 @@ function App() {
   }
 
   const dateBuilder = (d) => {
-    let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    let months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    let days = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 
     let day = days[d.getDay()];
     let date = d.getDate();
@@ -41,7 +40,7 @@ function App() {
           <input 
             type="text"
             className="search-bar"
-            placeholder="Search..."
+            placeholder="Ej: Buenos Aires, Ar"
             onChange={e => setQuery(e.target.value)}
             value={query}
             onKeyPress={search}
@@ -58,6 +57,8 @@ function App() {
               {Math.round(weather.main.temp)}°c
             </div>
             <div className="weather">{weather.weather[0].main}</div>
+            <div className="weather">Min: {weather.main.temp_min}</div>
+            <div className="weather">Max: {weather.main.temp_max}</div>
           </div>
         </div>
         ) : ('')}
