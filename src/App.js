@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+
 //import React from 'react';
 import './App.css';
 const api = {
   key: "9f4f24f9c84a420d24184975419ca2bd",
-  base: "https://api.openweathermap.org/data/2.5/"
+  base: "http://api.openweathermap.org/data/2.5/"
+
 }
 
 function App() {
@@ -58,6 +60,8 @@ function App() {
               {Math.round(weather.main.temp)}°c
             </div>
             <div className="weather">{weather.weather[0].main}</div>
+            <div className="weather">Min: {weather.main.temp_min}</div>
+            <div className="weather">Max: {weather.main.temp_max}</div>
           </div>
         </div>
         ) : ('')}
